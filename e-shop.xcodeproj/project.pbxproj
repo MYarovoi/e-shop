@@ -14,6 +14,10 @@
 		BF85519D2C528A0D0008B3A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF85519C2C528A0D0008B3A8 /* Base */; };
 		BF8551A52C53B1EE0008B3A8 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8551A42C53B1EE0008B3A8 /* CategoryCollectionViewController.swift */; };
 		BF8551A72C53B28A0008B3A8 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8551A62C53B28A0008B3A8 /* CategoryCollectionViewCell.swift */; };
+		BF8551A92C53B5250008B3A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8551A82C53B5250008B3A8 /* GoogleService-Info.plist */; };
+		BF8551AC2C53B7D00008B3A8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF8551AB2C53B7D00008B3A8 /* FirebaseAuth */; };
+		BF8551AE2C53B7D00008B3A8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF8551AD2C53B7D00008B3A8 /* FirebaseFirestore */; };
+		BF8551B02C53B7D00008B3A8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF8551AF2C53B7D00008B3A8 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,7 @@
 		BF85519E2C528A0D0008B3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF8551A42C53B1EE0008B3A8 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		BF8551A62C53B28A0008B3A8 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF8551A82C53B5250008B3A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8551AC2C53B7D00008B3A8 /* FirebaseAuth in Frameworks */,
+				BF8551AE2C53B7D00008B3A8 /* FirebaseFirestore in Frameworks */,
+				BF8551B02C53B7D00008B3A8 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +74,7 @@
 				BF8551992C528A0D0008B3A8 /* Assets.xcassets */,
 				BF85519B2C528A0D0008B3A8 /* LaunchScreen.storyboard */,
 				BF85519E2C528A0D0008B3A8 /* Info.plist */,
+				BF8551A82C53B5250008B3A8 /* GoogleService-Info.plist */,
 			);
 			path = "e-shop";
 			sourceTree = "<group>";
@@ -86,6 +95,11 @@
 			dependencies = (
 			);
 			name = "e-shop";
+			packageProductDependencies = (
+				BF8551AB2C53B7D00008B3A8 /* FirebaseAuth */,
+				BF8551AD2C53B7D00008B3A8 /* FirebaseFirestore */,
+				BF8551AF2C53B7D00008B3A8 /* FirebaseStorage */,
+			);
 			productName = "e-shop";
 			productReference = BF85518D2C528A0B0008B3A8 /* e-shop.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +128,9 @@
 				Base,
 			);
 			mainGroup = BF8551842C528A0B0008B3A8;
+			packageReferences = (
+				BF8551AA2C53B7D00008B3A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BF85518E2C528A0B0008B3A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF85519A2C528A0D0008B3A8 /* Assets.xcassets in Resources */,
+				BF8551A92C53B5250008B3A8 /* GoogleService-Info.plist in Resources */,
 				BF85519D2C528A0D0008B3A8 /* Base in Resources */,
 				BF8551982C528A0B0008B3A8 /* Base in Resources */,
 			);
@@ -302,8 +320,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +329,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "HomeCode.e-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -330,8 +352,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,9 +361,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "HomeCode.e-shop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -367,6 +393,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF8551AA2C53B7D00008B3A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF8551AB2C53B7D00008B3A8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF8551AA2C53B7D00008B3A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BF8551AD2C53B7D00008B3A8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF8551AA2C53B7D00008B3A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BF8551AF2C53B7D00008B3A8 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF8551AA2C53B7D00008B3A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF8551852C528A0B0008B3A8 /* Project object */;
 }

@@ -12,6 +12,8 @@
 		BF8551982C528A0B0008B3A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF8551972C528A0B0008B3A8 /* Base */; };
 		BF85519A2C528A0D0008B3A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF8551992C528A0D0008B3A8 /* Assets.xcassets */; };
 		BF85519D2C528A0D0008B3A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BF85519C2C528A0D0008B3A8 /* Base */; };
+		BF8551A52C53B1EE0008B3A8 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8551A42C53B1EE0008B3A8 /* CategoryCollectionViewController.swift */; };
+		BF8551A72C53B28A0008B3A8 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8551A62C53B28A0008B3A8 /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		BF8551992C528A0D0008B3A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF85519C2C528A0D0008B3A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF85519E2C528A0D0008B3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF8551A42C53B1EE0008B3A8 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		BF8551A62C53B28A0008B3A8 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				BF8551902C528A0B0008B3A8 /* AppDelegate.swift */,
+				BF8551A42C53B1EE0008B3A8 /* CategoryCollectionViewController.swift */,
 				BF8551922C528A0B0008B3A8 /* SceneDelegate.swift */,
 				BF8551962C528A0B0008B3A8 /* Main.storyboard */,
+				BF8551A62C53B28A0008B3A8 /* CategoryCollectionViewCell.swift */,
 				BF8551992C528A0D0008B3A8 /* Assets.xcassets */,
 				BF85519B2C528A0D0008B3A8 /* LaunchScreen.storyboard */,
 				BF85519E2C528A0D0008B3A8 /* Info.plist */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8551A72C53B28A0008B3A8 /* CategoryCollectionViewCell.swift in Sources */,
 				BF8551912C528A0B0008B3A8 /* AppDelegate.swift in Sources */,
 				BF8551932C528A0B0008B3A8 /* SceneDelegate.swift in Sources */,
+				BF8551A52C53B1EE0008B3A8 /* CategoryCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

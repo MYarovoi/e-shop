@@ -90,6 +90,10 @@
                                         <constraint firstItem="Tvk-ub-PvW" firstAttribute="top" secondItem="5JJ-0G-exG" secondAttribute="top" id="mJk-15-alu"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="Tvk-ub-PvW" id="QwK-9c-Lte"/>
+                                    <outlet property="nameLabel" destination="gLy-QM-7Ey" id="v6I-9h-CGb"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

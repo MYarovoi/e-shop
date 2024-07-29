@@ -10,6 +10,8 @@ import UIKit
 class CategoryCollectionViewController: UICollectionViewController {
     
     var categoryArray: [Category] = []
+    private let sectionsInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+    private let itemsPerRows: CGFloat = 3
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,5 +49,29 @@ class CategoryCollectionViewController: UICollectionViewController {
             self.categoryArray = allCatigories
             self.collectionView.reloadData()
         }
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+
+extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let paddingSpace = sectionsInset.left * (itemsPerRows + 1)
+        let availiableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availiableWidth / itemsPerRows
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    
+        return sectionsInset
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return sectionsInset.left
     }
 }

@@ -77,7 +77,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="JRP-Gu-Vzr"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>

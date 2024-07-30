@@ -1,0 +1,24 @@
+PODS:
+  - ImagePicker (3.2.0)
+  - JGProgressHUD (2.2)
+  - NVActivityIndicatorView/AppExtension (4.8.0)
+
+DEPENDENCIES:
+  - ImagePicker
+  - JGProgressHUD
+  - NVActivityIndicatorView/AppExtension
+
+SPEC REPOS:
+  trunk:
+    - ImagePicker
+    - JGProgressHUD
+    - NVActivityIndicatorView
+
+SPEC CHECKSUMS:
+  ImagePicker: 1d950bbb2422548ed58791b4ec7f42fe42920511
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+
+PODFILE CHECKSUM: 876c17eb8128341ce267d81b3b7d4d01ac5d17ec
+
+COCOAPODS: 1.15.2

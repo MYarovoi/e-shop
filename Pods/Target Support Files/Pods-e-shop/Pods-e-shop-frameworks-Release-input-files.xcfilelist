@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-e-shop/Pods-e-shop-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework
+${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework

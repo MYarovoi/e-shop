@@ -179,12 +179,99 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="mtF-bK-a5V">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YAS-uj-9vy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YAS-uj-9vy">
+                            <connections>
+                                <segue destination="NHM-dM-y0M" kind="show" identifier="itemToAddItem" id="fpm-YA-CUv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaS-ch-Qak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2490.8396946564885" y="-723.23943661971839"/>
+        </scene>
+        <!--Add Item-->
+        <scene sceneID="6SA-J7-s7w">
+            <objects>
+                <viewController id="NHM-dM-y0M" customClass="AddItemViewController" customModule="e_shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ffg-0n-nz3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypc-EC-Lk0">
+                                <rect key="frame" x="16" y="125" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDf-pX-zpx">
+                                <rect key="frame" x="16" y="169" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DiO-Ro-dDt">
+                                <rect key="frame" x="16" y="213" width="361" height="130"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="2tk-ka-eRe"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5e-NY-Vpc">
+                                <rect key="frame" x="16" y="368" width="83.333333333333329" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="08T-vH-GLv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="NHM-dM-y0M" eventType="touchUpInside" id="ViZ-Yi-bls"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NGh-5R-ida"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="SDf-pX-zpx" firstAttribute="leading" secondItem="NGh-5R-ida" secondAttribute="leading" constant="16" id="5xT-7r-8kg"/>
+                            <constraint firstItem="O5e-NY-Vpc" firstAttribute="top" secondItem="DiO-Ro-dDt" secondAttribute="bottom" constant="25" id="6X8-Dm-4aw"/>
+                            <constraint firstItem="NGh-5R-ida" firstAttribute="trailing" secondItem="DiO-Ro-dDt" secondAttribute="trailing" constant="16" id="9vj-he-yye"/>
+                            <constraint firstItem="SDf-pX-zpx" firstAttribute="top" secondItem="Ypc-EC-Lk0" secondAttribute="bottom" constant="10" id="CY3-MK-tHt"/>
+                            <constraint firstItem="Ypc-EC-Lk0" firstAttribute="top" secondItem="NGh-5R-ida" secondAttribute="top" constant="22" id="T1F-0r-Wqm"/>
+                            <constraint firstItem="DiO-Ro-dDt" firstAttribute="leading" secondItem="NGh-5R-ida" secondAttribute="leading" constant="16" id="ULM-UP-Zcd"/>
+                            <constraint firstItem="O5e-NY-Vpc" firstAttribute="leading" secondItem="Ffg-0n-nz3" secondAttribute="leading" constant="16" id="UrD-Ev-Jm6"/>
+                            <constraint firstItem="NGh-5R-ida" firstAttribute="trailing" secondItem="SDf-pX-zpx" secondAttribute="trailing" constant="16" id="ZkO-wF-49S"/>
+                            <constraint firstItem="DiO-Ro-dDt" firstAttribute="top" secondItem="SDf-pX-zpx" secondAttribute="bottom" constant="10" id="dVS-Eh-Jf1"/>
+                            <constraint firstItem="NGh-5R-ida" firstAttribute="trailing" secondItem="Ypc-EC-Lk0" secondAttribute="trailing" constant="16" id="eTf-EC-TvG"/>
+                            <constraint firstItem="Ypc-EC-Lk0" firstAttribute="leading" secondItem="NGh-5R-ida" secondAttribute="leading" constant="16" id="eTi-V6-4xt"/>
+                            <constraint firstItem="NGh-5R-ida" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O5e-NY-Vpc" secondAttribute="trailing" symbolic="YES" id="gOI-rE-dYv"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Fmo-ef-siz" appends="YES" id="11f-sd-DLP"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Item" id="Naz-BJ-l8n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ue3-ic-w6p">
+                            <connections>
+                                <action selector="doneBarButtonPressed:" destination="NHM-dM-y0M" id="qzd-Ub-WdO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="DiO-Ro-dDt" id="pY9-aY-FG8"/>
+                        <outlet property="pricetextField" destination="SDf-pX-zpx" id="D23-wk-tZ3"/>
+                        <outlet property="titleTextField" destination="Ypc-EC-Lk0" id="ppN-Xz-8sr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8DR-4O-YfC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Fmo-ef-siz">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="NHM-dM-y0M" id="dEI-uG-HbS"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3301.5267175572517" y="-723.23943661971839"/>
         </scene>
         <!--Category-->
         <scene sceneID="6yy-4L-mBr">
@@ -208,6 +295,9 @@
     </scenes>
     <resources>
         <image name="imagePlaceholder" width="150" height="113.5"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

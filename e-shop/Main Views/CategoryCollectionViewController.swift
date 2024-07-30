@@ -40,6 +40,13 @@ class CategoryCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    //MARK: - UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "categotyToItem", sender: categoryArray[indexPath.row])
+    }
+    
     //MARK: - Download categories
     
     private func loadCatigories() {
@@ -48,6 +55,17 @@ class CategoryCollectionViewController: UICollectionViewController {
             
             self.categoryArray = allCatigories
             self.collectionView.reloadData()
+        }
+    }
+    
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "categotyToItem" {
+            
+            let vc = segue.destination as! ItemsTableViewController
+            vc.categoty = sender as! Category
         }
     }
 }

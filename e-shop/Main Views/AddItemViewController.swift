@@ -6,9 +6,10 @@
 //
 
 import UIKit
-import Gallery
-import JGProgressHUD
-import NVActivityIndicatorView
+//import JGProgressHUD
+//import NVActivityIndicatorView
+import Photos
+import PhotosUI
 
 class AddItemViewController: UIViewController {
     
@@ -18,11 +19,11 @@ class AddItemViewController: UIViewController {
     
     var category: Category!
     
-    var gallery: GalleryController!
-    let hud = JGProgressHUD(style: .dark)
-    var activityIndicator: NVActivityIndicatorView?
+//    let hud = JGProgressHUD(style: .dark)
+//    var activityIndicator: NVActivityIndicatorView?
     
     var itemImages: [UIImage?] = []
+    var imagePicker =  UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,17 @@ class AddItemViewController: UIViewController {
     @IBAction func cameraButtonPressed(_ sender: UIButton) {
         
         itemImages = []
-        showImageGallery()
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        alert.addAction(UIAlertAction(title: "Choose Photo", style: .default, handler: { _ in
+            self.openGallery()
+        }))
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
@@ -86,46 +97,64 @@ class AddItemViewController: UIViewController {
         }
     }
     
-    private func showImageGallery () {
+    func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = true
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else{
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func openGallery() {
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 6
+        configuration.filter = .images
         
-        self.gallery = GalleryController()
-        self.gallery.delegate = self
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true, completion: nil)
         
-        Config.tabsToShow = [.imageTab, .cameraTab]
-        Config.Camera.imageLimit = 6
-        
-        self.present(self.gallery, animated: true)
+        for result in results {
+            if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                result.itemProvider.loadObject(ofClass: UIImage.self) { (object, error) in
+                    if let image = object as? UIImage {
+                       
+                        DispatchQueue.main.async {
+                            self.itemImages.append(image)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-//MARK: - GalleryControllerDelegate
-extension AddItemViewController: GalleryControllerDelegate {
+extension AddItemViewController: UIImagePickerControllerDelegate, PHPickerViewControllerDelegate, UINavigationControllerDelegate {
     
-    func galleryController(_ controller: Gallery.GalleryController, didSelectImages images: [Gallery.Image]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if images.count > 0 {
-            
-            Image.resolve(images: images) { (resolveImages) in
-                
-                self.itemImages = resolveImages
+        if let image = info[.originalImage] as? UIImage {
+        
+            DispatchQueue.main.async {
+                self.itemImages.append(image)
             }
         }
-        
-        controller.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
+
     
-    func galleryController(_ controller: Gallery.GalleryController, didSelectVideo video: Gallery.Video) {
-        
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    func galleryController(_ controller: Gallery.GalleryController, requestLightbox images: [Gallery.Image]) {
-        
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    func galleryControllerDidCancel(_ controller: Gallery.GalleryController) {
-        
-        controller.dismiss(animated: true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.isNavigationBarHidden = false
+        self.dismiss(animated: true, completion: nil)
     }
 }

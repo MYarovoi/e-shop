@@ -89,7 +89,13 @@ class AddItemViewController: UIViewController {
         
         if itemImages.count > 0 {
             
-            
+            uploadImages(images: itemImages, itemId: item.id) { imageLinks in
+                
+                item.imageLinks = imageLinks
+                
+                saveItemToFirebase(item)
+                self.popTheView()
+            }
         } else {
             
             saveItemToFirebase(item)

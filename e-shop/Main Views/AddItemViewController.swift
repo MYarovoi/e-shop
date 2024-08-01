@@ -6,8 +6,6 @@
 //
 
 import UIKit
-//import JGProgressHUD
-//import NVActivityIndicatorView
 import Photos
 import PhotosUI
 
@@ -19,8 +17,13 @@ class AddItemViewController: UIViewController {
     
     var category: Category!
     
-//    let hud = JGProgressHUD(style: .dark)
-//    var activityIndicator: NVActivityIndicatorView?
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.hidesWhenStopped = true
+        indicator.color = .systemGray
+
+        return indicator
+    }()
     
     var itemImages: [UIImage?] = []
     var imagePicker =  UIImagePickerController()
@@ -28,6 +31,17 @@ class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     @IBAction func doneBarButtonPressed(_ sender: UIBarButtonItem) {
@@ -80,6 +94,8 @@ class AddItemViewController: UIViewController {
     
     private func saveToFirebase () {
         
+        activityIndicator.startAnimating()
+        
         let item = Item()
         item.id = UUID().uuidString
         item.name = titleTextField.text
@@ -95,6 +111,8 @@ class AddItemViewController: UIViewController {
                 
                 saveItemToFirebase(item)
                 self.popTheView()
+                
+                self.activityIndicator.stopAnimating()
             }
         } else {
             

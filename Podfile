@@ -6,8 +6,7 @@ target 'e-shop' do
   use_frameworks!
 
   # Pods for e-shop
-pod 'ImagePicker'
 pod 'NVActivityIndicatorView/AppExtension'
-pod 'JGProgressHUD'
+# pod 'JGProgressHUD'
 
 end

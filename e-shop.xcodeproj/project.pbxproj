@@ -31,6 +31,8 @@
 /* Begin PBXFileReference section */
 		BF22931C2C5B8293005ECF47 /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
 		BF22931E2C5B8339005ECF47 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		BF2293202C5B963D005ECF47 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2293272C5BA3D4005ECF47 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6217BE2C57E355006B6CA1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		BF6217C02C590462006B6CA1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BF6217C22C592702006B6CA1 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -70,12 +72,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A55CB92C3FE1381D044F0093 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF2293272C5BA3D4005ECF47 /* NVActivityIndicatorView.framework */,
+				BF2293202C5B963D005ECF47 /* NVActivityIndicatorView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BF8551842C528A0B0008B3A8 = {
 			isa = PBXGroup;
 			children = (
 				BF85518F2C528A0B0008B3A8 /* e-shop */,
 				BF85518E2C528A0B0008B3A8 /* Products */,
 				6DCC9420B271559CD9309F33 /* Pods */,
+				A55CB92C3FE1381D044F0093 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

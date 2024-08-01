@@ -53,6 +53,10 @@ class AddItemViewController: UIViewController {
             saveToFirebase()
         } else {
             
+            let alertController = UIAlertController(title: "Error", message: "All fields are required", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
         }
     }
     

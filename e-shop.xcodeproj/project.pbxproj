@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF22931D2C5B8293005ECF47 /* Richability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF22931C2C5B8293005ECF47 /* Richability.swift */; };
 		BF22931F2C5B8339005ECF47 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF22931E2C5B8339005ECF47 /* Downloader.swift */; };
+		BF22932B2C5CF431005ECF47 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF22932A2C5CF431005ECF47 /* ItemTableViewCell.swift */; };
 		BF6217BF2C57E355006B6CA1 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6217BE2C57E355006B6CA1 /* ItemsTableViewController.swift */; };
 		BF6217C12C590462006B6CA1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6217C02C590462006B6CA1 /* Item.swift */; };
 		BF6217C32C592702006B6CA1 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6217C22C592702006B6CA1 /* AddItemViewController.swift */; };
@@ -33,6 +34,7 @@
 		BF22931E2C5B8339005ECF47 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		BF2293202C5B963D005ECF47 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2293272C5BA3D4005ECF47 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF22932A2C5CF431005ECF47 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		BF6217BE2C57E355006B6CA1 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		BF6217C02C590462006B6CA1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BF6217C22C592702006B6CA1 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8551A62C53B28A0008B3A8 /* CategoryCollectionViewCell.swift */,
+				BF22932A2C5CF431005ECF47 /* ItemTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				BF8551912C528A0B0008B3A8 /* AppDelegate.swift in Sources */,
 				BF6217BF2C57E355006B6CA1 /* ItemsTableViewController.swift in Sources */,
 				BF8551B22C53BA090008B3A8 /* FirebaseCollectionReference.swift in Sources */,
+				BF22932B2C5CF431005ECF47 /* ItemTableViewCell.swift in Sources */,
 				BF6217C32C592702006B6CA1 /* AddItemViewController.swift in Sources */,
 				BF8551B72C53BE310008B3A8 /* Category.swift in Sources */,
 				BF8551BA2C53C6790008B3A8 /* Constants.swift in Sources */,

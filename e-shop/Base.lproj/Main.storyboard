@@ -120,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="B7D-Dr-G45">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="B7D-Dr-G45" customClass="ItemTableViewCell" customModule="e_shop" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B7D-Dr-G45" id="x3D-hr-oEC">
@@ -172,6 +172,12 @@
                                         <constraint firstItem="z2f-6Z-L6H" firstAttribute="leading" secondItem="x3D-hr-oEC" secondAttribute="leading" constant="20" id="wSf-2f-sjx"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionlabel" destination="r2b-qs-zGH" id="B0d-hw-nqj"/>
+                                    <outlet property="itemImageView" destination="z2f-6Z-L6H" id="epe-VB-IJ8"/>
+                                    <outlet property="nameLabel" destination="dok-W8-SbM" id="W5a-xd-GMq"/>
+                                    <outlet property="pricelabel" destination="odd-By-Vgp" id="0Yx-9B-hKF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

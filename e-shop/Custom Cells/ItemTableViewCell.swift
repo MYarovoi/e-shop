@@ -31,6 +31,13 @@ class ItemTableViewCell: UITableViewCell {
         descriptionlabel.text = item.description
         pricelabel.text = String(item.price ?? 0.00) 
         
+        if item.imageLinks != nil && item.imageLinks.count > 0 {
+            
+            downloadImages(imageURLs: [item.imageLinks.first!]) { images in
+                
+                self.itemImageView.image = images.first as? UIImage
+            }
+        }
     }
 
 }

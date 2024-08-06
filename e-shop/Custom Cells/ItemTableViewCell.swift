@@ -29,7 +29,8 @@ class ItemTableViewCell: UITableViewCell {
         
         nameLabel.text = item.name
         descriptionlabel.text = item.description
-        pricelabel.text = String(item.price ?? 0.00) 
+        pricelabel.text = convertToCurrency(item.price ?? 0.00)
+        pricelabel.adjustsFontSizeToFitWidth = true
         
         if item.imageLinks != nil && item.imageLinks.count > 0 {
             

@@ -16,11 +16,29 @@ class ItemViewController: UIViewController {
     
     var item: Item!
     var itemsImages: [UIImage] = []
+    private let sectionsInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    private let itemsPerRows: CGFloat = 1
+    private let cellHight: CGFloat = 196.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        downloadPictures()
+        
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(
+                image: UIImage(named: "back"),
+                style: .plain,
+                target: self,
+                action: #selector(self.backAction)
+            )]
+        
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(
+                image: UIImage(named: "basket"),
+                style: .plain,
+                target: self,
+                action: #selector(self.addToBasketPressed)
+            )]
     }
     
     //MARK: - Setup UI
@@ -35,20 +53,72 @@ class ItemViewController: UIViewController {
             descriptionTextView.text = item.description
         }
     }
+    
+    @objc func backAction() {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func addToBasketPressed() {
+        
+    }
+    
+    //MARK: - Download Pictures
+    
+    private func downloadPictures() {
+        
+        if item != nil && item.imageLinks != nil {
+            
+            downloadImages(imageURLs: item.imageLinks) { allImages in
+                
+                if allImages.count > 0 {
+                    self.itemsImages = allImages as! [UIImage]
+                    self.imageCollectionView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension ItemViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 0
+        return itemsImages.count == 0 ? 1 : itemsImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
+        
+        if itemsImages.count > 0 {
+        
+            cell.setupImageWith(itemImage: itemsImages[indexPath.row])
+
+        }
+        
+        return cell
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+
+extension ItemViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let availiableWidth = collectionView.frame.width - sectionsInset.left
+        
+        return CGSize(width: availiableWidth, height: cellHight)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     
+        return sectionsInset
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return sectionsInset.left
+    }
 }

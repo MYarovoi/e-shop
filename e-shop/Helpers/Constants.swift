@@ -26,3 +26,7 @@ public let kCATEGORYID = "categoryId"
 public let kDESCRIPTION = "description"
 public let kPRICE = "price"
 public let kIMAGELINKS = "imageLinks"
+
+//MARK: - Basket
+public let kOWNERID = "ownerId"
+public let kITEMIDS = "itemIds"

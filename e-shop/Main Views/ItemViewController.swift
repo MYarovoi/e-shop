@@ -61,6 +61,55 @@ class ItemViewController: UIViewController {
     
     @objc func addToBasketPressed() {
         
+        downloadBasketFromFirestore("1234") { basket in
+            
+            if basket == nil {
+                
+                self.createNewBasket()
+            } else {
+                
+                basket!.itemIds.append(self.item.id)
+                self.updateBasket(basket!, withValues: [kITEMIDS : basket!.itemIds])
+            }
+        }
+    }
+    
+    //MARK: - Add to basket
+    
+    private func createNewBasket() {
+        
+        let newBasket = Basket()
+        newBasket.id = UUID().uuidString
+        newBasket.ownerId = "1234"
+        newBasket.itemIds = [self.item.id]
+        saveBasketToFirestore(newBasket)
+    }
+    
+    private func updateBasket(_ basket: Basket, withValues: [String : Any]) {
+        
+        updateBasketInFirestore(basket, withvalues: withValues) { error in
+            
+            if error != nil {
+                
+                self.showPopupMessage(message: "Error: \(error!.localizedDescription)")
+                debugPrint(error!)
+            } else {
+                
+                self.showPopupMessage(message: "Added to basket")
+            }
+        }
+    }
+    
+    //MARK: - Show Popup Message
+    func showPopupMessage(message: String) {
+    
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        present(alertController, animated: true, completion: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            alertController.dismiss(animated: true, completion: nil)
+        }
     }
     
     //MARK: - Download Pictures

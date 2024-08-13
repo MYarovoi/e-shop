@@ -58,6 +58,67 @@ class BasketViewController: UIViewController {
             }
         }
     }
+    
+    private func updateTotalLabels(_ isEmpty: Bool) {
+        
+        if isEmpty {
+            
+            totalItems.text = "0"
+            basketTotalpriceLabel.text = returnBasketTotalPrice()
+        } else {
+            
+            totalItems.text = "\(allItems.count)"
+            basketTotalpriceLabel.text = returnBasketTotalPrice()
+        }
+        
+        checkoutButtonStatusUpdate()
+    }
+    
+    private func returnBasketTotalPrice() -> String {
+        
+        var totalPrice: Double = 0
+        
+        for item in allItems {
+            
+            totalPrice += item.price
+        }
+        
+        return "Total price: " + convertToCurrency(totalPrice)
+    }
+    
+    //MARK: - Control Checkout Button
+    
+    private func checkoutButtonStatusUpdate() {
+        
+        checkOutButton.isEnabled = allItems.count > 0
+        
+        if checkOutButton.isEnabled {
+            
+            checkOutButton.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        } else {
+            
+            disableCkeckoutButton()
+        }
+    }
+    
+    private func disableCkeckoutButton() {
+        
+        checkOutButton.isEnabled = false
+        checkOutButton.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+    }
+    
+    private func removeItemFromBasket(itemID: String) {
+        
+        for i in 0 ..< basket!.itemIds.count {
+            
+            if itemID == basket!.itemIds[i] {
+                
+                basket!.itemIds.remove(at: i)
+                
+                return
+            }
+        }
+    }
 }
 
 extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
@@ -76,30 +137,33 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    private func updateTotalLabels(_ isEmpty: Bool) {
+    //MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
-        if isEmpty {
-            
-            totalItems.text = "0"
-            basketTotalpriceLabel.text = returnBasketTotalPrice()
-        } else {
-            
-            totalItems.text = "\(allItems.count)"
-            basketTotalpriceLabel.text = returnBasketTotalPrice()
-        }
+        return true
     }
     
-    private func returnBasketTotalPrice() -> String {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        var totalPrice: Double = 0
-        
-        for item in allItems {
+        if editingStyle == .delete {
             
-            totalPrice += item.price
+            let itemToDelete = allItems[indexPath.row]
+            
+            allItems.remove(at: indexPath.row)
+            tableView.reloadData()
+            
+            removeItemFromBasket(itemID: itemToDelete.id)
+            
+            updateBasketInFirestore(basket!, withvalues: [kITEMIDS : basket!.itemIds!]) { error in
+                
+                if error != nil {
+                    
+                    debugPrint("Erroro: \(error!.localizedDescription)")
+                }
+                
+                self.getBasketItems()
+            }
         }
-        
-        return "Total price: " + convertToCurrency(totalPrice)
     }
-    
-    
 }

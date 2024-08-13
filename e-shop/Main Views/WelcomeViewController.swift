@@ -15,12 +15,16 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         
-        
+        dismissView()
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -42,4 +46,14 @@ class WelcomeViewController: UIViewController {
         
         
     }
+    
+    private func dismissView() {
+        
+        self.dismiss(animated: true)
+    }
+    
+    private func textFieldsHaveText() -> Bool {
+        
+        return (emailTextField.text != "" && passwordTextField.text != "")
+    }    
 }

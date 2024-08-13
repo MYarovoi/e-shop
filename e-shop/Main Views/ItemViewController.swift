@@ -27,14 +27,14 @@ class ItemViewController: UIViewController {
         downloadPictures()
         
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(
-                image: UIImage(named: "addToBasket"),
+                image: UIImage(named: "back"),
                 style: .plain,
                 target: self,
                 action: #selector(self.backAction)
             )]
         
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(
-                image: UIImage(named: "basket"),
+                image: UIImage(named: "addToBasket"),
                 style: .plain,
                 target: self,
                 action: #selector(self.addToBasketPressed)

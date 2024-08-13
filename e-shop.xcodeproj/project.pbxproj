@@ -33,6 +33,7 @@
 		BFAEA0FD2C64F77A003A3ECE /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA0FC2C64F77A003A3ECE /* Basket.swift */; };
 		BFAEA0FF2C6A35E3003A3ECE /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA0FE2C6A35E3003A3ECE /* BasketViewController.swift */; };
 		BFAEA1012C6B80FC003A3ECE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */; };
+		BFAEA1032C6B8A7D003A3ECE /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1022C6B8A7D003A3ECE /* MUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		BFAEA0FC2C64F77A003A3ECE /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		BFAEA0FE2C6A35E3003A3ECE /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		BFAEA1022C6B8A7D003A3ECE /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8551B62C53BE310008B3A8 /* Category.swift */,
+				BFAEA1022C6B8A7D003A3ECE /* MUser.swift */,
 				BFAEA0FC2C64F77A003A3ECE /* Basket.swift */,
 				BF6217C02C590462006B6CA1 /* Item.swift */,
 			);
@@ -266,6 +269,7 @@
 				BF22931D2C5B8293005ECF47 /* Richability.swift in Sources */,
 				BF8551932C528A0B0008B3A8 /* SceneDelegate.swift in Sources */,
 				BF8551A52C53B1EE0008B3A8 /* CategoryCollectionViewController.swift in Sources */,
+				BFAEA1032C6B8A7D003A3ECE /* MUser.swift in Sources */,
 				BFAEA1012C6B80FC003A3ECE /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

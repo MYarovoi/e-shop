@@ -560,13 +560,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-DZ-XsH">
-                                <rect key="frame" x="163" y="59" width="67" height="33.666666666666657"/>
+                                <rect key="frame" x="163" y="69" width="67" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ru3-fc-vbc">
-                                <rect key="frame" x="15" y="58.666666666666657" width="76.666666666666671" height="34.333333333333343"/>
+                                <rect key="frame" x="15" y="68.666666666666671" width="76.666666666666671" height="34.333333333333329"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                                 <connections>
@@ -574,17 +574,17 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnm-D0-cxo">
-                                <rect key="frame" x="16" y="143" width="361" height="34"/>
+                                <rect key="frame" x="16" y="153" width="361" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlX-hW-Hgx">
-                                <rect key="frame" x="16" y="192" width="361" height="34"/>
+                                <rect key="frame" x="16" y="202" width="361" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="center" distribution="fillEqually" spacing="92" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-wD-KFp">
-                                <rect key="frame" x="63.666666666666657" y="256" width="266" height="34.333333333333314"/>
+                                <rect key="frame" x="63.666666666666657" y="266" width="266" height="34.333333333333314"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfJ-fh-b9U">
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="34.333333333333336"/>
@@ -605,7 +605,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EQ8-c3-u8x">
-                                <rect key="frame" x="120.66666666666667" y="387.66666666666669" width="151.66666666666663" height="76.666666666666686"/>
+                                <rect key="frame" x="120.66666666666667" y="409" width="151.66666666666663" height="34.333333333333314"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTD-xA-9v3">
                                         <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="34.333333333333336"/>
@@ -615,8 +615,8 @@
                                             <action selector="forgotPasswordButtonPressed:" destination="DQU-4T-hBn" eventType="touchUpInside" id="lSU-Yu-0A7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSM-Zs-FrT">
-                                        <rect key="frame" x="0.0" y="42.333333333333314" width="151.66666666666666" height="34.333333333333343"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSM-Zs-FrT">
+                                        <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Resend Email"/>
                                         <connections>
@@ -630,12 +630,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hlX-hW-Hgx" firstAttribute="leading" secondItem="i5F-YW-Wmd" secondAttribute="leading" constant="16" id="1nV-JP-h2b"/>
-                            <constraint firstItem="AOi-DZ-XsH" firstAttribute="top" secondItem="i5F-YW-Wmd" secondAttribute="top" id="Bi6-fU-KQb"/>
                             <constraint firstItem="Aug-wD-KFp" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="Eur-lj-yRk"/>
                             <constraint firstItem="Vnm-D0-cxo" firstAttribute="leading" secondItem="i5F-YW-Wmd" secondAttribute="leading" constant="16" id="FWI-N2-LuZ"/>
                             <constraint firstItem="i5F-YW-Wmd" firstAttribute="trailing" secondItem="hlX-hW-Hgx" secondAttribute="trailing" constant="16" id="Jxh-7v-ddm"/>
                             <constraint firstItem="Ru3-fc-vbc" firstAttribute="leading" secondItem="i5F-YW-Wmd" secondAttribute="leading" constant="15" id="LAf-te-Dx7"/>
                             <constraint firstItem="Ru3-fc-vbc" firstAttribute="centerY" secondItem="AOi-DZ-XsH" secondAttribute="centerY" id="TzZ-Qn-bJ1"/>
+                            <constraint firstItem="AOi-DZ-XsH" firstAttribute="top" secondItem="i5F-YW-Wmd" secondAttribute="top" constant="10" id="X8V-mY-hB6"/>
                             <constraint firstItem="i5F-YW-Wmd" firstAttribute="trailing" secondItem="Vnm-D0-cxo" secondAttribute="trailing" constant="16" id="eK0-62-35f"/>
                             <constraint firstItem="EQ8-c3-u8x" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="iJV-4j-O7k"/>
                             <constraint firstItem="hlX-hW-Hgx" firstAttribute="top" secondItem="Vnm-D0-cxo" secondAttribute="bottom" constant="15" id="ihK-fO-4jI"/>

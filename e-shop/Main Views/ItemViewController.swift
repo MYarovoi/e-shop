@@ -61,17 +61,19 @@ class ItemViewController: UIViewController {
     
     @objc func addToBasketPressed() {
         
-        downloadBasketFromFirestore("1234") { basket in
-            
-            if basket == nil {
-                
-                self.createNewBasket()
-            } else {
-                
-                basket!.itemIds.append(self.item.id)
-                self.updateBasket(basket!, withValues: [kITEMIDS : basket!.itemIds])
-            }
-        }
+//        downloadBasketFromFirestore("1234") { basket in
+//            
+//            if basket == nil {
+//                
+//                self.createNewBasket()
+//            } else {
+//                
+//                basket!.itemIds.append(self.item.id)
+//                self.updateBasket(basket!, withValues: [kITEMIDS : basket!.itemIds])
+//            }
+//        }
+        
+        showLoginView()
     }
     
     //MARK: - Add to basket
@@ -149,6 +151,15 @@ extension ItemViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         return cell
+    }
+    
+    //MARK: - Show Login View
+    
+    private func showLoginView() {
+        
+        let loginView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        
+        self.present(loginView, animated: true, completion: nil)
     }
 }
 

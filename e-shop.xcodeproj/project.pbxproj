@@ -32,6 +32,7 @@
 		BF8551BA2C53C6790008B3A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8551B92C53C6790008B3A8 /* Constants.swift */; };
 		BFAEA0FD2C64F77A003A3ECE /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA0FC2C64F77A003A3ECE /* Basket.swift */; };
 		BFAEA0FF2C6A35E3003A3ECE /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA0FE2C6A35E3003A3ECE /* BasketViewController.swift */; };
+		BFAEA1012C6B80FC003A3ECE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		BF8551B92C53C6790008B3A8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFAEA0FC2C64F77A003A3ECE /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		BFAEA0FE2C6A35E3003A3ECE /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				BF6217C22C592702006B6CA1 /* AddItemViewController.swift */,
 				BF6217BE2C57E355006B6CA1 /* ItemsTableViewController.swift */,
 				BF22932E2C626790005ECF47 /* ItemViewController.swift */,
+				BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				BF22931D2C5B8293005ECF47 /* Richability.swift in Sources */,
 				BF8551932C528A0B0008B3A8 /* SceneDelegate.swift in Sources */,
 				BF8551A52C53B1EE0008B3A8 /* CategoryCollectionViewController.swift in Sources */,
+				BFAEA1012C6B80FC003A3ECE /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

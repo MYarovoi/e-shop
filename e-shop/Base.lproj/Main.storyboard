@@ -549,7 +549,111 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYI-Q6-z7j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4252.6717557251905" y="-459.85915492957747"/>
+            <point key="canvasLocation" x="4474" y="-45"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="yLh-xb-ePM">
+            <objects>
+                <viewController storyboardIdentifier="loginView" id="DQU-4T-hBn" customClass="WelcomeViewController" customModule="e_shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6W9-es-ph8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOi-DZ-XsH">
+                                <rect key="frame" x="163" y="59" width="67" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ru3-fc-vbc">
+                                <rect key="frame" x="15" y="58.666666666666657" width="76.666666666666671" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="DQU-4T-hBn" eventType="touchUpInside" id="w2G-tv-X4x"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnm-D0-cxo">
+                                <rect key="frame" x="16" y="143" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlX-hW-Hgx">
+                                <rect key="frame" x="16" y="192" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="center" distribution="fillEqually" spacing="92" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-wD-KFp">
+                                <rect key="frame" x="63.666666666666657" y="256" width="266" height="34.333333333333314"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HfJ-fh-b9U">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="DQU-4T-hBn" eventType="touchUpInside" id="WRq-bX-UYZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPo-lK-ytx">
+                                        <rect key="frame" x="179" y="0.0" width="87" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                                        <connections>
+                                            <action selector="registerButtonPressed:" destination="DQU-4T-hBn" eventType="touchUpInside" id="Lgj-6u-TeE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EQ8-c3-u8x">
+                                <rect key="frame" x="120.66666666666667" y="387.66666666666669" width="151.66666666666663" height="76.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTD-xA-9v3">
+                                        <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Forgot Password"/>
+                                        <connections>
+                                            <action selector="forgotPasswordButtonPressed:" destination="DQU-4T-hBn" eventType="touchUpInside" id="lSU-Yu-0A7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSM-Zs-FrT">
+                                        <rect key="frame" x="0.0" y="42.333333333333314" width="151.66666666666666" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Resend Email"/>
+                                        <connections>
+                                            <action selector="resendEmailButtonPressed:" destination="DQU-4T-hBn" eventType="touchUpInside" id="Xcr-hl-Nae"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i5F-YW-Wmd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hlX-hW-Hgx" firstAttribute="leading" secondItem="i5F-YW-Wmd" secondAttribute="leading" constant="16" id="1nV-JP-h2b"/>
+                            <constraint firstItem="AOi-DZ-XsH" firstAttribute="top" secondItem="i5F-YW-Wmd" secondAttribute="top" id="Bi6-fU-KQb"/>
+                            <constraint firstItem="Aug-wD-KFp" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="Eur-lj-yRk"/>
+                            <constraint firstItem="Vnm-D0-cxo" firstAttribute="leading" secondItem="i5F-YW-Wmd" secondAttribute="leading" constant="16" id="FWI-N2-LuZ"/>
+                            <constraint firstItem="i5F-YW-Wmd" firstAttribute="trailing" secondItem="hlX-hW-Hgx" secondAttribute="trailing" constant="16" id="Jxh-7v-ddm"/>
+                            <constraint firstItem="Ru3-fc-vbc" firstAttribute="leading" secondItem="i5F-YW-Wmd" secondAttribute="leading" constant="15" id="LAf-te-Dx7"/>
+                            <constraint firstItem="Ru3-fc-vbc" firstAttribute="centerY" secondItem="AOi-DZ-XsH" secondAttribute="centerY" id="TzZ-Qn-bJ1"/>
+                            <constraint firstItem="i5F-YW-Wmd" firstAttribute="trailing" secondItem="Vnm-D0-cxo" secondAttribute="trailing" constant="16" id="eK0-62-35f"/>
+                            <constraint firstItem="EQ8-c3-u8x" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="iJV-4j-O7k"/>
+                            <constraint firstItem="hlX-hW-Hgx" firstAttribute="top" secondItem="Vnm-D0-cxo" secondAttribute="bottom" constant="15" id="ihK-fO-4jI"/>
+                            <constraint firstItem="Aug-wD-KFp" firstAttribute="top" secondItem="hlX-hW-Hgx" secondAttribute="bottom" constant="30" id="kzV-D4-i5p"/>
+                            <constraint firstItem="Vnm-D0-cxo" firstAttribute="top" secondItem="Ru3-fc-vbc" secondAttribute="bottom" constant="50" id="lEb-zV-0kz"/>
+                            <constraint firstItem="AOi-DZ-XsH" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="qSj-1J-QEP"/>
+                            <constraint firstItem="EQ8-c3-u8x" firstAttribute="centerY" secondItem="6W9-es-ph8" secondAttribute="centerY" id="xGw-7z-DOc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Vnm-D0-cxo" id="lK4-Ne-aUr"/>
+                        <outlet property="passwordTextField" destination="hlX-hW-Hgx" id="eaA-oo-vAP"/>
+                        <outlet property="resendButton" destination="PSM-Zs-FrT" id="z70-w8-4pb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VgH-gV-sQy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5580.9160305343512" y="-45.070422535211272"/>
         </scene>
         <!--Category-->
         <scene sceneID="6yy-4L-mBr">

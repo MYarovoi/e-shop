@@ -605,7 +605,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EQ8-c3-u8x">
-                                <rect key="frame" x="120.66666666666667" y="409" width="151.66666666666663" height="34.333333333333314"/>
+                                <rect key="frame" x="120.66666666666667" y="350.33333333333331" width="151.66666666666663" height="34.333333333333314"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTD-xA-9v3">
                                         <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="34.333333333333336"/>
@@ -633,16 +633,16 @@
                             <constraint firstItem="Aug-wD-KFp" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="Eur-lj-yRk"/>
                             <constraint firstItem="Vnm-D0-cxo" firstAttribute="leading" secondItem="i5F-YW-Wmd" secondAttribute="leading" constant="16" id="FWI-N2-LuZ"/>
                             <constraint firstItem="i5F-YW-Wmd" firstAttribute="trailing" secondItem="hlX-hW-Hgx" secondAttribute="trailing" constant="16" id="Jxh-7v-ddm"/>
+                            <constraint firstItem="EQ8-c3-u8x" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="KfY-qZ-665"/>
                             <constraint firstItem="Ru3-fc-vbc" firstAttribute="leading" secondItem="i5F-YW-Wmd" secondAttribute="leading" constant="15" id="LAf-te-Dx7"/>
                             <constraint firstItem="Ru3-fc-vbc" firstAttribute="centerY" secondItem="AOi-DZ-XsH" secondAttribute="centerY" id="TzZ-Qn-bJ1"/>
                             <constraint firstItem="AOi-DZ-XsH" firstAttribute="top" secondItem="i5F-YW-Wmd" secondAttribute="top" constant="10" id="X8V-mY-hB6"/>
                             <constraint firstItem="i5F-YW-Wmd" firstAttribute="trailing" secondItem="Vnm-D0-cxo" secondAttribute="trailing" constant="16" id="eK0-62-35f"/>
-                            <constraint firstItem="EQ8-c3-u8x" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="iJV-4j-O7k"/>
                             <constraint firstItem="hlX-hW-Hgx" firstAttribute="top" secondItem="Vnm-D0-cxo" secondAttribute="bottom" constant="15" id="ihK-fO-4jI"/>
                             <constraint firstItem="Aug-wD-KFp" firstAttribute="top" secondItem="hlX-hW-Hgx" secondAttribute="bottom" constant="30" id="kzV-D4-i5p"/>
                             <constraint firstItem="Vnm-D0-cxo" firstAttribute="top" secondItem="Ru3-fc-vbc" secondAttribute="bottom" constant="50" id="lEb-zV-0kz"/>
+                            <constraint firstItem="EQ8-c3-u8x" firstAttribute="top" secondItem="Aug-wD-KFp" secondAttribute="bottom" constant="50" id="nbo-Lh-1FG"/>
                             <constraint firstItem="AOi-DZ-XsH" firstAttribute="centerX" secondItem="6W9-es-ph8" secondAttribute="centerX" id="qSj-1J-QEP"/>
-                            <constraint firstItem="EQ8-c3-u8x" firstAttribute="centerY" secondItem="6W9-es-ph8" secondAttribute="centerY" id="xGw-7z-DOc"/>
                         </constraints>
                     </view>
                     <connections>

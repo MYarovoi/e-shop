@@ -38,7 +38,16 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
-        
+        if textFieldsHaveText() {
+            
+            loginUser()
+        } else {
+            
+            let alertController = UIAlertController(title: "Error", message: "All fields are required", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
@@ -63,6 +72,40 @@ class WelcomeViewController: UIViewController {
     @IBAction func resendEmailButtonPressed(_ sender: UIButton) {
         
         
+    }
+    
+    //MARK: - LoginUser
+    private func loginUser() {
+        
+        addActivityIndicator()
+        activityIndicator.startAnimating()
+        MUser.loginUserWith(email: emailTextField.text!, password: passwordTextField.text!) { error, isEmailVerified in
+            
+            if error == nil {
+                
+                if isEmailVerified {
+                    
+                    self.dismissView()
+                    debugPrint("Email is verified")
+                } else {
+                    
+                    let alertController = UIAlertController(title: "Error", message: "Error: \(error!.localizedDescription)", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                            alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                
+                let alertController = UIAlertController(title: "Error", message: "Error: \(error!.localizedDescription)", preferredStyle: .alert)
+                self.present(alertController, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    alertController.dismiss(animated: true)
+                }
+                debugPrint("Error: \(error!.localizedDescription)")
+            }
+            
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     //MARK: - Register User

@@ -131,3 +131,29 @@ class MUser {
         }
     }
 }
+
+//MARK: - Save User to Firebase
+
+func saveUserToFirestore(mUser: MUser) {
+    
+    FirebaseReference(.User).document(mUser.objectId).setData(userDictionaryFrom(user: mUser) as! [String : Any]) { error in
+        
+        if error != nil {
+            
+            debugPrint("Error saving a user: \(error!.localizedDescription)")
+        }
+    }
+        }
+
+func saveUserLocaly(mUserDictionary: NSDictionary) {
+    
+    UserDefaults.standard.set(mUserDictionary, forKey: kCURRENTUSER)
+    UserDefaults.standard.synchronize()
+}
+
+//MARK: - Helper Function
+
+func userDictionaryFrom(user: MUser) -> NSDictionary {
+    
+    return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullAddress ?? "", user.onBoard, user.purchasedItemIds], forKeys: [kOBJECTID as NSCopying, kEMAIL as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying, kFULLADDRESS as NSCopying, kONBOARD as NSCopying, kPURCHASEDITEMIDS as NSCopying])
+}

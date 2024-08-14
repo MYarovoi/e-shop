@@ -89,7 +89,7 @@ class WelcomeViewController: UIViewController {
                     debugPrint("Email is verified")
                 } else {
                     
-                    let alertController = UIAlertController(title: "Error", message: "Error: \(error!.localizedDescription)", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Error", message: "Please verify your email!", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
                             alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)

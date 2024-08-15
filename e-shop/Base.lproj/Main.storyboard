@@ -191,6 +191,7 @@
                         <segue destination="jIL-w4-WPb" kind="relationship" relationship="viewControllers" id="WGA-R7-cqJ"/>
                         <segue destination="8pn-3H-GMR" kind="relationship" relationship="viewControllers" id="XsC-Aj-nsF"/>
                         <segue destination="M06-S6-Kqr" kind="relationship" relationship="viewControllers" id="wEw-vx-fZx"/>
+                        <segue destination="WAB-Ef-xPU" kind="relationship" relationship="viewControllers" id="cUD-oI-oI0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iyh-qh-9uP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -695,11 +696,120 @@
             </objects>
             <point key="canvasLocation" x="687.78625954198469" y="670.42253521126759"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="Eec-jL-qI6">
+            <objects>
+                <tableViewController id="mDs-3q-qjL" customClass="ProfileTableViewController" customModule="e_shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="S05-2w-x8y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="aAq-Uw-mf3">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="EsU-0W-2wT">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EsU-0W-2wT" id="wMJ-DM-dAD">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M73-Tc-pqj">
+                                                    <rect key="frame" x="10" y="4.3333333333333321" width="347.66666666666669" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Finish registration"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="M73-Tc-pqj" firstAttribute="leading" secondItem="wMJ-DM-dAD" secondAttribute="leading" constant="10" id="Sth-hn-Dsd"/>
+                                                <constraint firstAttribute="trailing" secondItem="M73-Tc-pqj" secondAttribute="trailing" constant="5" id="dXx-ZG-G7I"/>
+                                                <constraint firstItem="M73-Tc-pqj" firstAttribute="centerY" secondItem="wMJ-DM-dAD" secondAttribute="centerY" id="eVT-Ye-amd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Bhr-dA-1jB">
+                                        <rect key="frame" x="0.0" y="93.666667938232422" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bhr-dA-1jB" id="a4W-vq-sli">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmU-ix-uWE">
+                                                    <rect key="frame" x="10" y="4.3333333333333321" width="347.66666666666669" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Purchase history"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xmU-ix-uWE" firstAttribute="leading" secondItem="a4W-vq-sli" secondAttribute="leading" constant="10" id="MUS-4u-mYb"/>
+                                                <constraint firstItem="xmU-ix-uWE" firstAttribute="centerY" secondItem="a4W-vq-sli" secondAttribute="centerY" id="jLM-x6-QuG"/>
+                                                <constraint firstAttribute="trailing" secondItem="xmU-ix-uWE" secondAttribute="trailing" constant="5" id="kGl-uk-aAk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="WRY-PL-y1M">
+                                        <rect key="frame" x="0.0" y="137.33333587646484" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WRY-PL-y1M" id="Sko-fs-DTG">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-hD-Ywp">
+                                                    <rect key="frame" x="10" y="4.3333333333333321" width="347.66666666666669" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Terms &amp; Conditions"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CNc-hD-Ywp" firstAttribute="leading" secondItem="Sko-fs-DTG" secondAttribute="leading" constant="10" id="9gl-Wz-phk"/>
+                                                <constraint firstItem="CNc-hD-Ywp" firstAttribute="centerY" secondItem="Sko-fs-DTG" secondAttribute="centerY" id="Rdl-qZ-CoK"/>
+                                                <constraint firstAttribute="trailing" secondItem="CNc-hD-Ywp" secondAttribute="trailing" constant="5" id="gEV-Gw-HyP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="mDs-3q-qjL" id="Jty-hc-LmG"/>
+                            <outlet property="delegate" destination="mDs-3q-qjL" id="QuC-WL-lra"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Profile" id="nfw-eq-kck"/>
+                    <connections>
+                        <outlet property="finishRegistrationButton" destination="M73-Tc-pqj" id="mtj-UB-6Dk"/>
+                        <outlet property="purchaseHistoryButton" destination="xmU-ix-uWE" id="lgc-NH-EYe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16E-Ss-uo5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614.5038167938931" y="1394.3661971830986"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="TUA-dU-OFb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WAB-Ef-xPU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="S7T-Yw-Wc0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eZy-s2-dqu">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mDs-3q-qjL" kind="relationship" relationship="rootViewController" id="n4o-RY-QZj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lY7-Sf-Fef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687.78625954198469" y="1394.3661971830986"/>
+        </scene>
     </scenes>
     <resources>
         <image name="basket" width="30" height="30"/>
         <image name="homeIcon" width="30" height="30"/>
         <image name="imagePlaceholder" width="150" height="113.5"/>
+        <image name="profile" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

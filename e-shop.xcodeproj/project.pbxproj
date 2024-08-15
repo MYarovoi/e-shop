@@ -34,6 +34,7 @@
 		BFAEA0FF2C6A35E3003A3ECE /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA0FE2C6A35E3003A3ECE /* BasketViewController.swift */; };
 		BFAEA1012C6B80FC003A3ECE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */; };
 		BFAEA1032C6B8A7D003A3ECE /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1022C6B8A7D003A3ECE /* MUser.swift */; };
+		BFAEA1052C6E0DBC003A3ECE /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		BFAEA0FE2C6A35E3003A3ECE /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BFAEA1022C6B8A7D003A3ECE /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
+		BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				BF8551A42C53B1EE0008B3A8 /* CategoryCollectionViewController.swift */,
 				BFAEA0FE2C6A35E3003A3ECE /* BasketViewController.swift */,
 				BF6217C22C592702006B6CA1 /* AddItemViewController.swift */,
+				BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */,
 				BF6217BE2C57E355006B6CA1 /* ItemsTableViewController.swift */,
 				BF22932E2C626790005ECF47 /* ItemViewController.swift */,
 				BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */,
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAEA1052C6E0DBC003A3ECE /* ProfileTableViewController.swift in Sources */,
 				BFAEA0FF2C6A35E3003A3ECE /* BasketViewController.swift in Sources */,
 				BF8551A72C53B28A0008B3A8 /* CategoryCollectionViewCell.swift in Sources */,
 				BF6217C12C590462006B6CA1 /* Item.swift in Sources */,

@@ -125,11 +125,35 @@ class MUser {
             if error == nil {
                 
                 authDataResult!.user.sendEmailVerification { error in
-                    
-                    print("auth email verification error: \(error!.localizedDescription)")
                 }
+            } else {
+                debugPrint("auth email verification error: \(error!.localizedDescription)")
             }
         }
+    }
+    
+    //MARK: - Resend link methods
+
+    class func resetPasswordFor(email: String, completion: @escaping(_ error: Error?) -> Void) {
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            
+            completion(error)
+        }
+    }
+    
+    class func resendVerificationEmail(email: String, completion: @escaping(_ error: Error?) -> Void) {
+        
+        Auth.auth().currentUser?.reload(completion: { error in
+            
+            completion(error)
+            
+            Auth.auth().currentUser?.sendEmailVerification { error in
+                
+                debugPrint("Resend email error: \(error!.localizedDescription)")
+                completion(error)
+            }
+        })
     }
 }
 

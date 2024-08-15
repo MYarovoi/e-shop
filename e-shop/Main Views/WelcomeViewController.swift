@@ -66,12 +66,25 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
         
-        
+        if emailTextField.text != "" {
+            
+            resetPassword()
+            
+        } else {
+            
+            let alertController = UIAlertController(title: "Error", message: "Please insert email", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func resendEmailButtonPressed(_ sender: UIButton) {
         
-        
+        MUser.resendVerificationEmail(email: emailTextField.text!) { error in
+            
+            debugPrint("Error resending email: \(error?.localizedDescription)")
+        }
     }
     
     //MARK: - LoginUser
@@ -93,6 +106,8 @@ class WelcomeViewController: UIViewController {
                     let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
                             alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
+                    
+                    self.resendButton.isHidden = false
                 }
             } else {
                 
@@ -140,6 +155,27 @@ class WelcomeViewController: UIViewController {
     private func dismissView() {
         
         self.dismiss(animated: true)
+    }
+    
+    private func resetPassword() {
+        
+        MUser.resetPasswordFor(email: emailTextField.text!) { error in
+            
+            if error == nil  {
+                
+                let alertController = UIAlertController(title: "Success", message: "Reset password has been sent!", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                        alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            } else {
+                
+                let alertController = UIAlertController(title: "Error", message: "\(error!.localizedDescription)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                        alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
     private func textFieldsHaveText() -> Bool {

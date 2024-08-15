@@ -28,6 +28,10 @@ class FinishRegistrationViewController: UIViewController {
     }
     
     @IBAction func doneButtonePressed(_ sender: UIButton) {
+        
+        finishOnboarding()
+        self.dismiss(animated: true)
+
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -42,6 +46,32 @@ class FinishRegistrationViewController: UIViewController {
             DoneButton.isEnabled = true
         } else {
             DoneButton.isEnabled = false
+        }
+    }
+    
+    private func finishOnboarding() {
+        
+        let withValues = [kFIRSTNAME : nameTextField.text!, kLASTNAME : surnameTextField.text!, kONBOARD : true, kFULLADDRESS : addressTextField.text!, kFULLNAME: (nameTextField.text! + " " + surnameTextField.text!)] as [String : Any]
+        
+        updateCurrenUserInFirestore(withValues: withValues) { error in
+            
+            if error == nil {
+                
+                let alert  = UIAlertController(title: "Success", message: "Updated!", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    alert.dismiss(animated: true)
+                }
+                                
+            } else {
+                
+                debugPrint("Error updating User: \(error!.localizedDescription)")
+                
+                let alertController = UIAlertController(title: "Error", message: "Error: \(error!.localizedDescription)", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                        alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
     }
 }

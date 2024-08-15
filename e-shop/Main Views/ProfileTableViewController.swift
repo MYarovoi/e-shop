@@ -89,6 +89,6 @@ class ProfileTableViewController: UITableViewController {
     
     private func goToEditProfile() {
         
-        
+        performSegue(withIdentifier: "profileToEditSeg", sender: self)
     }
 }

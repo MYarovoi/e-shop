@@ -700,7 +700,7 @@
         <scene sceneID="Eec-jL-qI6">
             <objects>
                 <tableViewController id="mDs-3q-qjL" customClass="ProfileTableViewController" customModule="e_shop" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="S05-2w-x8y">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="S05-2w-x8y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -782,6 +782,7 @@
                     <connections>
                         <outlet property="finishRegistrationButton" destination="M73-Tc-pqj" id="mtj-UB-6Dk"/>
                         <outlet property="purchaseHistoryButton" destination="xmU-ix-uWE" id="lgc-NH-EYe"/>
+                        <segue destination="JRr-xC-KAQ" kind="show" identifier="profileToEditSeg" id="5YM-WG-URS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16E-Ss-uo5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -864,6 +865,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nm-Zr-G6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2652.6717557251909" y="1005.6338028169015"/>
+        </scene>
+        <!--Edit Profile-->
+        <scene sceneID="p3U-Fl-gOO">
+            <objects>
+                <viewController id="JRr-xC-KAQ" customClass="EditProfileViewController" customModule="e_shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tIh-Ym-f10">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-SS-Eu8">
+                                <rect key="frame" x="16" y="116" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2A-5S-fVX">
+                                <rect key="frame" x="16" y="160" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sIY-iG-MGf">
+                                <rect key="frame" x="16" y="204" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZZ-OF-ZNn">
+                                <rect key="frame" x="154" y="278" width="85" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="JRr-xC-KAQ" eventType="touchUpInside" id="dBd-Ls-HcN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Jb-zy-bhx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Jb-zy-bhx" firstAttribute="trailing" secondItem="n2A-5S-fVX" secondAttribute="trailing" constant="16" id="7JX-s4-aEg"/>
+                            <constraint firstItem="lwf-SS-Eu8" firstAttribute="leading" secondItem="2Jb-zy-bhx" secondAttribute="leading" constant="16" id="F5u-85-30A"/>
+                            <constraint firstItem="sIY-iG-MGf" firstAttribute="leading" secondItem="2Jb-zy-bhx" secondAttribute="leading" constant="16" id="NmQ-y1-Jea"/>
+                            <constraint firstItem="2Jb-zy-bhx" firstAttribute="trailing" secondItem="lwf-SS-Eu8" secondAttribute="trailing" constant="16" id="UM7-cK-eep"/>
+                            <constraint firstItem="2Jb-zy-bhx" firstAttribute="trailing" secondItem="sIY-iG-MGf" secondAttribute="trailing" constant="16" id="Zm2-S2-gCl"/>
+                            <constraint firstItem="n2A-5S-fVX" firstAttribute="leading" secondItem="2Jb-zy-bhx" secondAttribute="leading" constant="16" id="b6O-Md-V5O"/>
+                            <constraint firstItem="sIY-iG-MGf" firstAttribute="top" secondItem="n2A-5S-fVX" secondAttribute="bottom" constant="10" id="bHw-cH-cvo"/>
+                            <constraint firstItem="lwf-SS-Eu8" firstAttribute="top" secondItem="2Jb-zy-bhx" secondAttribute="top" constant="13" id="cDc-Aa-Wri"/>
+                            <constraint firstItem="fZZ-OF-ZNn" firstAttribute="centerX" secondItem="tIh-Ym-f10" secondAttribute="centerX" id="day-gM-7b1"/>
+                            <constraint firstItem="fZZ-OF-ZNn" firstAttribute="top" secondItem="sIY-iG-MGf" secondAttribute="bottom" constant="40" id="drf-zj-dNp"/>
+                            <constraint firstItem="n2A-5S-fVX" firstAttribute="top" secondItem="lwf-SS-Eu8" secondAttribute="bottom" constant="10" id="zrQ-Xg-VD5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="Hps-PK-u1G">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DZn-0w-EG3">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="JRr-xC-KAQ" id="Rej-hM-syg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addressTextField" destination="sIY-iG-MGf" id="ER0-Gy-bb5"/>
+                        <outlet property="nameTextField" destination="lwf-SS-Eu8" id="EW4-gD-EeM"/>
+                        <outlet property="surnameTextField" destination="n2A-5S-fVX" id="MtQ-hl-MGH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="79Y-zc-Q78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3511" y="1006"/>
         </scene>
         <!--Profile-->
         <scene sceneID="TUA-dU-OFb">

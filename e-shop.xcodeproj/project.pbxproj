@@ -35,6 +35,7 @@
 		BFAEA1012C6B80FC003A3ECE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */; };
 		BFAEA1032C6B8A7D003A3ECE /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1022C6B8A7D003A3ECE /* MUser.swift */; };
 		BFAEA1052C6E0DBC003A3ECE /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */; };
+		BFAEA1072C6E3F5B003A3ECE /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1062C6E3F5B003A3ECE /* FinishRegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BFAEA1022C6B8A7D003A3ECE /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		BFAEA1062C6E3F5B003A3ECE /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +150,7 @@
 				BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */,
 				BF6217BE2C57E355006B6CA1 /* ItemsTableViewController.swift */,
 				BF22932E2C626790005ECF47 /* ItemViewController.swift */,
-				BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */,
+				BFAEA1082C6E3F6C003A3ECE /* Login View */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -172,6 +174,15 @@
 				BF6217C02C590462006B6CA1 /* Item.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BFAEA1082C6E3F6C003A3ECE /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */,
+				BFAEA1062C6E3F5B003A3ECE /* FinishRegistrationViewController.swift */,
+			);
+			path = "Login View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 				BFAEA0FF2C6A35E3003A3ECE /* BasketViewController.swift in Sources */,
 				BF8551A72C53B28A0008B3A8 /* CategoryCollectionViewCell.swift in Sources */,
 				BF6217C12C590462006B6CA1 /* Item.swift in Sources */,
+				BFAEA1072C6E3F5B003A3ECE /* FinishRegistrationViewController.swift in Sources */,
 				BF2293312C637A13005ECF47 /* ImageCollectionViewCell.swift in Sources */,
 				BF22932F2C626790005ECF47 /* ItemViewController.swift in Sources */,
 				BF22931F2C5B8339005ECF47 /* Downloader.swift in Sources */,

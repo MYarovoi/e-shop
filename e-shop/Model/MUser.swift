@@ -101,6 +101,7 @@ class MUser {
                 
                 if authDataResult!.user.isEmailVerified {
                     
+                    downloadUserFromFirestore(userdId: authDataResult!.user.uid, email: email)
                     completion(error, true)
                 } else {
                     
@@ -125,9 +126,32 @@ class MUser {
                 
                 authDataResult!.user.sendEmailVerification { error in
                     
-                    print("auth email verification error: \(error?.localizedDescription)")
+                    print("auth email verification error: \(error!.localizedDescription)")
                 }
             }
+        }
+    }
+}
+
+//MARK: - Download User
+
+func downloadUserFromFirestore(userdId: String, email: String) {
+    
+    FirebaseReference(.User).document(userdId).getDocument { snapshot, error in
+        
+        guard let snapshot = snapshot else { return }
+        
+        if snapshot.exists {
+            
+            //Download user if it exist
+            saveUserLocaly(mUserDictionary: snapshot.data()! as NSDictionary)
+            
+        } else {
+            
+            //There is no user. Save new in Firestore
+            let user = MUser(objectId: userdId, email: email, firstName: "", lastName: "")
+            saveUserLocaly(mUserDictionary: userDictionaryFrom(user: user))
+            saveUserToFirestore(mUser: user)
         }
     }
 }

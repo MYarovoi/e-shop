@@ -29,7 +29,13 @@ class BasketViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        loadBasketFromFirestore()
+        if MUser.currentUser() != nil {
+            
+            loadBasketFromFirestore()
+        } else {
+            
+            self.updateTotalLabels(true)
+        }
     }
     
     @IBAction func checkoutButtonPressed(_ sender: UIButton) {
@@ -39,7 +45,7 @@ class BasketViewController: UIViewController {
     //MARK: - Download basket
     private func loadBasketFromFirestore() {
         
-        downloadBasketFromFirestore("1234") { basket in
+        downloadBasketFromFirestore(MUser.currentId()) { basket in
             
             self.basket = basket
             self.getBasketItems()

@@ -37,6 +37,7 @@
 		BFAEA1052C6E0DBC003A3ECE /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */; };
 		BFAEA1072C6E3F5B003A3ECE /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1062C6E3F5B003A3ECE /* FinishRegistrationViewController.swift */; };
 		BFAEA10A2C6E594C003A3ECE /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1092C6E594C003A3ECE /* EditProfileViewController.swift */; };
+		BFAEA10C2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA10B2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BFAEA1062C6E3F5B003A3ECE /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
 		BFAEA1092C6E594C003A3ECE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		BFAEA10B2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHisoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				BFAEA1002C6B80FC003A3ECE /* WelcomeViewController.swift */,
+				BFAEA10B2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift */,
 				BFAEA1062C6E3F5B003A3ECE /* FinishRegistrationViewController.swift */,
 			);
 			path = "Login View";
@@ -283,6 +286,7 @@
 				BFAEA0FD2C64F77A003A3ECE /* Basket.swift in Sources */,
 				BF22932B2C5CF431005ECF47 /* ItemTableViewCell.swift in Sources */,
 				BF22932D2C625D02005ECF47 /* HelperFunctions.swift in Sources */,
+				BFAEA10C2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift in Sources */,
 				BF6217C32C592702006B6CA1 /* AddItemViewController.swift in Sources */,
 				BF8551B72C53BE310008B3A8 /* Category.swift in Sources */,
 				BF8551BA2C53C6790008B3A8 /* Constants.swift in Sources */,

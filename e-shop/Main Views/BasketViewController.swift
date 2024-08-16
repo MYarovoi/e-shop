@@ -40,6 +40,18 @@ class BasketViewController: UIViewController {
     
     @IBAction func checkoutButtonPressed(_ sender: UIButton) {
         
+        if MUser.currentUser()!.onBoard {
+            
+            tempFunc()
+            addItemsToPurchaseHistory(itemIds: self.purchesedItemIds)
+            emptyBasket()
+        } else {
+            
+            let alertController = UIAlertController(title: "Error", message: "Please complete your profile", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     //MARK: - Download basket
@@ -62,6 +74,13 @@ class BasketViewController: UIViewController {
                 self.updateTotalLabels(false)
                 self.tableView.reloadData()
             }
+        }
+    }
+    
+    func tempFunc() {
+        for item in allItems {
+            
+            purchesedItemIds.append(item.id)
         }
     }
     
@@ -90,6 +109,44 @@ class BasketViewController: UIViewController {
         }
         
         return "Total price: " + convertToCurrency(totalPrice)
+    }
+    
+    private func emptyBasket() {
+        
+        purchesedItemIds.removeAll()
+        allItems.removeAll()
+        tableView.reloadData()
+        
+        basket!.itemIds = []
+        updateBasketInFirestore(basket!, withvalues: [kITEMIDS : basket!.itemIds]) { error in
+            
+            if error != nil {
+                
+                debugPrint("Error updating the basket: \(error!.localizedDescription)")
+            } else {
+                
+                self.getBasketItems()
+            }
+        }
+    }
+    
+    private func addItemsToPurchaseHistory(itemIds: [String]) {
+        
+        if MUser.currentUser() != nil {
+            
+            let newItemIds = MUser.currentUser()!.purchasedItemIds + itemIds
+            
+            updateCurrenUserInFirestore(withValues: [kPURCHASEDITEMIDS : newItemIds]) { error in
+                
+                if error != nil {
+                    
+                    debugPrint("Error addPurchasedItems: \(error!.localizedDescription)")
+                }
+                
+                self.getBasketItems()
+            }
+            
+        }
     }
     
     //MARK: - Navigation

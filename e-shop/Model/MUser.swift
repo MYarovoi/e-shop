@@ -155,6 +155,23 @@ class MUser {
             }
         })
     }
+    
+    class func logoutCurrentUser(completion: @escaping(_ error: Error?) -> Void) {
+        
+        do {
+            
+            try Auth.auth().signOut()
+            UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
+            UserDefaults.standard.synchronize()
+            
+            completion(nil)
+            
+        } catch let error as NSError {
+            
+            completion(error)
+        }
+        
+    }
 }
 
 //MARK: - Download User

@@ -32,10 +32,12 @@ class EditProfileViewController: UIViewController {
                 if error == nil {
                     
                     let alertController = UIAlertController(title: "Success", message: "Updated!", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+                    let okAction = UIAlertAction(title: "ОК", style: .default) { _ in
+                        
+                        self.navigationController?.popViewController(animated: true)
+                    }
                             alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
-                    
                     
                 } else {
                     
@@ -60,6 +62,7 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func logOutButtonPressed(_ sender: UIButton) {
         
+        logoutUser()
     }
     
     //MARK: - Update UI
@@ -84,5 +87,19 @@ class EditProfileViewController: UIViewController {
     private func textFieldsHaveText() -> Bool {
         
         return (nameTextField.text != "" && surnameTextField.text != "" && addressTextField.text != "")
+    }
+    
+    private func logoutUser() {
+        
+        MUser.logoutCurrentUser { error in
+            
+            if error == nil {
+                
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                
+                debugPrint("Error logOutUser: \(error!.localizedDescription)")
+            }
+        }
     }
 }

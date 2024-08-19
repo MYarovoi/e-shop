@@ -38,6 +38,9 @@
 		BFAEA1072C6E3F5B003A3ECE /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1062C6E3F5B003A3ECE /* FinishRegistrationViewController.swift */; };
 		BFAEA10A2C6E594C003A3ECE /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1092C6E594C003A3ECE /* EditProfileViewController.swift */; };
 		BFAEA10C2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA10B2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift */; };
+		BFAEA10F2C736DC7003A3ECE /* CardPayments in Frameworks */ = {isa = PBXBuildFile; productRef = BFAEA10E2C736DC7003A3ECE /* CardPayments */; };
+		BFAEA1112C7371A3003A3ECE /* CorePayments in Frameworks */ = {isa = PBXBuildFile; productRef = BFAEA1102C7371A3003A3ECE /* CorePayments */; };
+		BFAEA1132C73851F003A3ECE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1122C73851F003A3ECE /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,7 @@
 		BFAEA1062C6E3F5B003A3ECE /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
 		BFAEA1092C6E594C003A3ECE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		BFAEA10B2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHisoryTableViewController.swift; sourceTree = "<group>"; };
+		BFAEA1122C73851F003A3ECE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +84,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAEA1112C7371A3003A3ECE /* CorePayments in Frameworks */,
 				BF8551AC2C53B7D00008B3A8 /* FirebaseAuth in Frameworks */,
 				BF8551AE2C53B7D00008B3A8 /* FirebaseFirestore in Frameworks */,
 				BF8551B02C53B7D00008B3A8 /* FirebaseStorage in Frameworks */,
+				BFAEA10F2C736DC7003A3ECE /* CardPayments in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +156,7 @@
 			children = (
 				BF8551A42C53B1EE0008B3A8 /* CategoryCollectionViewController.swift */,
 				BFAEA0FE2C6A35E3003A3ECE /* BasketViewController.swift */,
+				BFAEA1122C73851F003A3ECE /* SearchViewController.swift */,
 				BF6217C22C592702006B6CA1 /* AddItemViewController.swift */,
 				BFAEA1042C6E0DBC003A3ECE /* ProfileTableViewController.swift */,
 				BF6217BE2C57E355006B6CA1 /* ItemsTableViewController.swift */,
@@ -211,6 +218,8 @@
 				BF8551AB2C53B7D00008B3A8 /* FirebaseAuth */,
 				BF8551AD2C53B7D00008B3A8 /* FirebaseFirestore */,
 				BF8551AF2C53B7D00008B3A8 /* FirebaseStorage */,
+				BFAEA10E2C736DC7003A3ECE /* CardPayments */,
+				BFAEA1102C7371A3003A3ECE /* CorePayments */,
 			);
 			productName = "e-shop";
 			productReference = BF85518D2C528A0B0008B3A8 /* e-shop.app */;
@@ -242,6 +251,7 @@
 			mainGroup = BF8551842C528A0B0008B3A8;
 			packageReferences = (
 				BF8551AA2C53B7D00008B3A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BFAEA10D2C736DC7003A3ECE /* XCRemoteSwiftPackageReference "paypal-ios" */,
 			);
 			productRefGroup = BF85518E2C528A0B0008B3A8 /* Products */;
 			projectDirPath = "";
@@ -286,6 +296,7 @@
 				BFAEA0FD2C64F77A003A3ECE /* Basket.swift in Sources */,
 				BF22932B2C5CF431005ECF47 /* ItemTableViewCell.swift in Sources */,
 				BF22932D2C625D02005ECF47 /* HelperFunctions.swift in Sources */,
+				BFAEA1132C73851F003A3ECE /* SearchViewController.swift in Sources */,
 				BFAEA10C2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift in Sources */,
 				BF6217C32C592702006B6CA1 /* AddItemViewController.swift in Sources */,
 				BF8551B72C53BE310008B3A8 /* Category.swift in Sources */,
@@ -537,6 +548,14 @@
 				minimumVersion = 10.29.0;
 			};
 		};
+		BFAEA10D2C736DC7003A3ECE /* XCRemoteSwiftPackageReference "paypal-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paypal/paypal-ios/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -554,6 +573,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF8551AA2C53B7D00008B3A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		BFAEA10E2C736DC7003A3ECE /* CardPayments */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFAEA10D2C736DC7003A3ECE /* XCRemoteSwiftPackageReference "paypal-ios" */;
+			productName = CardPayments;
+		};
+		BFAEA1102C7371A3003A3ECE /* CorePayments */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFAEA10D2C736DC7003A3ECE /* XCRemoteSwiftPackageReference "paypal-ios" */;
+			productName = CorePayments;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

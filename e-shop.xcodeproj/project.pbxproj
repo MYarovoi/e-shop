@@ -41,9 +41,15 @@
 		BFAEA10F2C736DC7003A3ECE /* CardPayments in Frameworks */ = {isa = PBXBuildFile; productRef = BFAEA10E2C736DC7003A3ECE /* CardPayments */; };
 		BFAEA1112C7371A3003A3ECE /* CorePayments in Frameworks */ = {isa = PBXBuildFile; productRef = BFAEA1102C7371A3003A3ECE /* CorePayments */; };
 		BFAEA1132C73851F003A3ECE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1122C73851F003A3ECE /* SearchViewController.swift */; };
+		BFAEA1152C748A10003A3ECE /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEA1142C748A10003A3ECE /* AlgoliaService.swift */; };
+		BFAEA1202C748FFD003A3ECE /* Abtesting in Frameworks */ = {isa = PBXBuildFile; productRef = BFAEA11F2C748FFD003A3ECE /* Abtesting */; };
+		BFAEA1222C748FFD003A3ECE /* Analytics in Frameworks */ = {isa = PBXBuildFile; productRef = BFAEA1212C748FFD003A3ECE /* Analytics */; };
+		BFAEA1242C748FFD003A3ECE /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = BFAEA1232C748FFD003A3ECE /* Core */; };
+		E32847029F6DA42A4FEAFB50 /* Pods_e_shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05A16E2F1C0E76CC402B098 /* Pods_e_shop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010B3C93A34B7B42055A5C46 /* Pods-e-shop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-shop.debug.xcconfig"; path = "Target Support Files/Pods-e-shop/Pods-e-shop.debug.xcconfig"; sourceTree = "<group>"; };
 		BF22931C2C5B8293005ECF47 /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
 		BF22931E2C5B8339005ECF47 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		BF2293202C5B963D005ECF47 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +83,9 @@
 		BFAEA1092C6E594C003A3ECE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		BFAEA10B2C6F7AC2003A3ECE /* PurchasedHisoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHisoryTableViewController.swift; sourceTree = "<group>"; };
 		BFAEA1122C73851F003A3ECE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BFAEA1142C748A10003A3ECE /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
+		C05A16E2F1C0E76CC402B098 /* Pods_e_shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e_shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E99E37C001FB050ABB6B5605 /* Pods-e-shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-shop.release.xcconfig"; path = "Target Support Files/Pods-e-shop/Pods-e-shop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +93,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAEA1202C748FFD003A3ECE /* Abtesting in Frameworks */,
 				BFAEA1112C7371A3003A3ECE /* CorePayments in Frameworks */,
 				BF8551AC2C53B7D00008B3A8 /* FirebaseAuth in Frameworks */,
+				BFAEA1242C748FFD003A3ECE /* Core in Frameworks */,
+				BFAEA1222C748FFD003A3ECE /* Analytics in Frameworks */,
 				BF8551AE2C53B7D00008B3A8 /* FirebaseFirestore in Frameworks */,
 				BF8551B02C53B7D00008B3A8 /* FirebaseStorage in Frameworks */,
 				BFAEA10F2C736DC7003A3ECE /* CardPayments in Frameworks */,
+				E32847029F6DA42A4FEAFB50 /* Pods_e_shop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +113,7 @@
 			children = (
 				BF2293272C5BA3D4005ECF47 /* NVActivityIndicatorView.framework */,
 				BF2293202C5B963D005ECF47 /* NVActivityIndicatorView.framework */,
+				C05A16E2F1C0E76CC402B098 /* Pods_e_shop.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +124,7 @@
 				BF85518F2C528A0B0008B3A8 /* e-shop */,
 				BF85518E2C528A0B0008B3A8 /* Products */,
 				A55CB92C3FE1381D044F0093 /* Frameworks */,
+				C31B22C8530D46FE4B2A2561 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +197,7 @@
 			children = (
 				BF8551B62C53BE310008B3A8 /* Category.swift */,
 				BFAEA1022C6B8A7D003A3ECE /* MUser.swift */,
+				BFAEA1142C748A10003A3ECE /* AlgoliaService.swift */,
 				BFAEA0FC2C64F77A003A3ECE /* Basket.swift */,
 				BF6217C02C590462006B6CA1 /* Item.swift */,
 			);
@@ -198,6 +214,16 @@
 			path = "Login View";
 			sourceTree = "<group>";
 		};
+		C31B22C8530D46FE4B2A2561 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				010B3C93A34B7B42055A5C46 /* Pods-e-shop.debug.xcconfig */,
+				E99E37C001FB050ABB6B5605 /* Pods-e-shop.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF8551A12C528A0D0008B3A8 /* Build configuration list for PBXNativeTarget "e-shop" */;
 			buildPhases = (
+				157D900741A76ABDE55C08E3 /* [CP] Check Pods Manifest.lock */,
 				BF8551892C528A0B0008B3A8 /* Sources */,
 				BF85518A2C528A0B0008B3A8 /* Frameworks */,
 				BF85518B2C528A0B0008B3A8 /* Resources */,
+				C55F2C0FA0B96B7E54C7EA87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +248,9 @@
 				BF8551AF2C53B7D00008B3A8 /* FirebaseStorage */,
 				BFAEA10E2C736DC7003A3ECE /* CardPayments */,
 				BFAEA1102C7371A3003A3ECE /* CorePayments */,
+				BFAEA11F2C748FFD003A3ECE /* Abtesting */,
+				BFAEA1212C748FFD003A3ECE /* Analytics */,
+				BFAEA1232C748FFD003A3ECE /* Core */,
 			);
 			productName = "e-shop";
 			productReference = BF85518D2C528A0B0008B3A8 /* e-shop.app */;
@@ -252,6 +283,7 @@
 			packageReferences = (
 				BF8551AA2C53B7D00008B3A8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				BFAEA10D2C736DC7003A3ECE /* XCRemoteSwiftPackageReference "paypal-ios" */,
+				BFAEA1162C748A93003A3ECE /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */,
 			);
 			productRefGroup = BF85518E2C528A0B0008B3A8 /* Products */;
 			projectDirPath = "";
@@ -276,6 +308,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		157D900741A76ABDE55C08E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-e-shop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C55F2C0FA0B96B7E54C7EA87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-e-shop/Pods-e-shop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-e-shop/Pods-e-shop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-e-shop/Pods-e-shop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF8551892C528A0B0008B3A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -288,6 +362,7 @@
 				BFAEA1072C6E3F5B003A3ECE /* FinishRegistrationViewController.swift in Sources */,
 				BF2293312C637A13005ECF47 /* ImageCollectionViewCell.swift in Sources */,
 				BF22932F2C626790005ECF47 /* ItemViewController.swift in Sources */,
+				BFAEA1152C748A10003A3ECE /* AlgoliaService.swift in Sources */,
 				BF22931F2C5B8339005ECF47 /* Downloader.swift in Sources */,
 				BF8551912C528A0B0008B3A8 /* AppDelegate.swift in Sources */,
 				BF6217BF2C57E355006B6CA1 /* ItemsTableViewController.swift in Sources */,
@@ -452,6 +527,7 @@
 		};
 		BF8551A22C528A0D0008B3A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 010B3C93A34B7B42055A5C46 /* Pods-e-shop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -485,6 +561,7 @@
 		};
 		BF8551A32C528A0D0008B3A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E99E37C001FB050ABB6B5605 /* Pods-e-shop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -556,6 +633,14 @@
 				minimumVersion = 1.4.0;
 			};
 		};
+		BFAEA1162C748A93003A3ECE /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/algolia/algoliasearch-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -583,6 +668,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BFAEA10D2C736DC7003A3ECE /* XCRemoteSwiftPackageReference "paypal-ios" */;
 			productName = CorePayments;
+		};
+		BFAEA11F2C748FFD003A3ECE /* Abtesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFAEA1162C748A93003A3ECE /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = Abtesting;
+		};
+		BFAEA1212C748FFD003A3ECE /* Analytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFAEA1162C748A93003A3ECE /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = Analytics;
+		};
+		BFAEA1232C748FFD003A3ECE /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFAEA1162C748A93003A3ECE /* XCRemoteSwiftPackageReference "algoliasearch-client-swift" */;
+			productName = Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

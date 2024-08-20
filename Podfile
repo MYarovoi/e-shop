@@ -6,7 +6,6 @@ target 'e-shop' do
   use_frameworks!
 
   # Pods for e-shop
-pod 'NVActivityIndicatorView/AppExtension'
-# pod 'JGProgressHUD'
+pod 'AlgoliaSearchClient', '~> 8.0'
 
 end

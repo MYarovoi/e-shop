@@ -14,6 +14,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButtonOutlet: UIButton!
     
+    var searchResults: [Item] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,18 +79,38 @@ class SearchViewController: UIViewController {
             self.searchOptionsView.isHidden = !self.searchOptionsView.isHidden
         }
     }
+    
+    private func showItemView(withItem: Item) {
+        
+        let itemVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ItemView") as! ItemViewController
+        
+        itemVC.item = withItem
+        self.navigationController?.pushViewController(itemVC, animated: true)
+    }
 }
 
-extension SearchViewController: UITabBarDelegate, UITableViewDataSource {
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemTableViewCell
+        
+        cell.generateCell(searchResults[indexPath.row])
+        
+        return cell
     }
     
+    //MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        showItemView(withItem: searchResults[indexPath.row])
+    }
 }

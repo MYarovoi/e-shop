@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AlgoliaSearchClient
 
 class Item {
     
@@ -99,3 +100,12 @@ func downloadItems(_ withIDs: [String], completion: @escaping(_ itemArray: [Item
         completion(itemArray)
     }
 }
+
+//MARK: - Algolia Func
+
+//func saveItemsToAlgoloa(item: Item) {
+//    
+//    let index =  AlgoliaService.shared.index
+//    
+//    let itemToSave = itemDictionaryFrom(item) as! [String : Any]
+//}
